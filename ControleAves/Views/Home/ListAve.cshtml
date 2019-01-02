@@ -1,0 +1,89 @@
+﻿@model IEnumerable<ControleAves.Models.Ave>
+
+@{
+    ViewData["Title"] = "Lista de Aves";
+}
+
+<h2>ListAve</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ave_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ave_idPai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ave_idMae)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ave_idPulseira)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ave_nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ave_raca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ave_dtaNascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ave_dtaCadastro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ave_obs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ave_vascinada)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ave_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ave_idPai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ave_idMae)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ave_idPulseira)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ave_nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ave_raca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ave_dtaNascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ave_dtaCadastro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ave_obs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ave_vascinada)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
